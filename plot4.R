@@ -30,7 +30,7 @@ png("plot4.png", height=480, width=480, bg="transparent")
 par(mfrow=c(2,2))
 
 #(1,1)
-plot(days, dat$Global_active_power,type="l",xlab="",ylab="Global Active Power (kilowatts)")
+plot(days, dat$Global_active_power,type="l",xlab="",ylab="Global Active Power")
 
 #(1,2)
 plot(days,dat$Voltage,type="l",xlab="datetime", ylab="Voltage")
