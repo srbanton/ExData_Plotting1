@@ -20,15 +20,9 @@ col <- c("Date","Time","Global_active_power",
 dat <- read.table(fn, sep=sep, header=FALSE, skip=skip,
                   nrow=nrow,na.strings="?",col.names=col)
 
-##Plot histogram of Global Active Power
+##Plot histogram of Global Active Power and save as a png file
+##Png has transparent background; can remove bg="transparent" to get white background
+png("plot1.png", height=480, width=480, bg="transparent")
 hist(dat$Global_active_power,col="red", main="Global Active Power", 
      xlab="Global Active Power (kilowatts)",ylim=c(0,1200))
-
-#Save plot as png file
-library(datasets)
-dev.copy(png, file="plot1.png",width=480,height=480)
 dev.off()
-
-
-
-

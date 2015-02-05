@@ -25,7 +25,8 @@ dat <- read.table(fn, sep=sep, header=FALSE, skip=skip,
 days <- strptime(paste(dat$Date, dat$Time),"%d/%m/%Y %H:%M:%S") 
 
 ##Plot plot3
-png("plot3.png", height=480, width=480)
+##Png has transparent background; can remove bg="transparent" to get white background
+png("plot3.png", height=480, width=480, bg="transparent")
 plot(days, dat$Sub_metering_1, type="l", ylab="Energy sub metering", xlab="")
 lines(days, dat$Sub_metering_2, type="l", ylab="Energy sub metering", col="red")
 lines(days, dat$Sub_metering_3, type="l", ylab="Energy sub metering", col="blue")

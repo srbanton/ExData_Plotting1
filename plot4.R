@@ -25,7 +25,8 @@ dat <- read.table(fn, sep=sep, header=FALSE, skip=skip,
 days <- strptime(paste(dat$Date, dat$Time),"%d/%m/%Y %H:%M:%S") 
 
 ##Plot plot4
-png("plot4.png", height=480, width=480)
+##Png has transparent background; can remove bg="transparent" to get white background
+png("plot4.png", height=480, width=480, bg="transparent")
 par(mfrow=c(2,2))
 
 #(1,1)

@@ -25,9 +25,7 @@ dat <- read.table(fn, sep=sep, header=FALSE, skip=skip,
 days <- strptime(paste(dat$Date, dat$Time),"%d/%m/%Y %H:%M:%S") 
 
 ##Plot plot2
+##Png has transparent background; can remove bg="transparent" to get white background
+png("plot2.png", height=480, width=480, bg="transparent")
 plot(days, dat$Global_active_power,type="l",xlab="",ylab="Global Active Power (kilowatts)")
-
-#Save plot as png file
-library(datasets)
-dev.copy(png, file="plot2.png",width=480,height=480)
 dev.off()
